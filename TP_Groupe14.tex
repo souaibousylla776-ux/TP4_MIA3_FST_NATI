@@ -1,0 +1,177 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true, linkcolor=blue!60!black, urlcolor=blue!60!black}
+\setlist{itemsep=2pt, topsep=4pt}
+
+% --- Style du code C++ ---
+\lstdefinestyle{cppstyle}{
+  language=C++,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue!70!black}\bfseries,
+  commentstyle=\color{green!40!black}\itshape,
+  stringstyle=\color{red!60!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  frame=single,
+  breaklines=true,
+  tabsize=4,
+  showstringspaces=false,
+  inputencoding=utf8,
+  extendedchars=true,
+  literate={é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {à}{{\`a}}1 {ç}{{\c c}}1 {ô}{{\^o}}1 {î}{{\^i}}1 {û}{{\^u}}1 {É}{{\'E}}1
+}
+\lstset{style=cppstyle}
+
+% --- Encadré pour les énoncés ---
+\newtcolorbox{enonce}[1]{
+  colback=blue!4, colframe=blue!50!black,
+  fonttitle=\bfseries, title={#1}
+}
+
+\title{\textbf{Programmation Orientée Objet}\\[4pt]
+\large Travaux de groupe -- Groupe 14}
+\author{
+ DJOSSOU Houégnon Noel \\ SARE Gafarou \\ SAKA Bachirou \\ GOUROKO Orou \\ BONI Faustin
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\vspace{1cm}
+\tableofcontents
+\newpage
+
+% =====================================================
+\part*{Énoncés}
+\addcontentsline{toc}{part}{Énoncés}
+% =====================================================
+
+\section{TP 3 -- Système de gestion d'une résidence universitaire}
+
+\subsection{Problème à résoudre}
+Une résidence universitaire doit gérer les chambres, les occupants, les demandes d'hébergement et les périodes d'occupation. Le responsable souhaite disposer d'une application pour suivre les attributions de chambres et éviter les affectations multiples.
+
+\subsection{Fonctionnalités attendues}
+\begin{itemize}
+  \item Enregistrer les demandes d'hébergement.
+  \item Attribuer une chambre à un étudiant.
+  \item Vérifier les places disponibles.
+  \item Enregistrer les départs.
+  \item Consulter les chambres occupées et libres.
+  \item Consulter l'historique des occupations.
+\end{itemize}
+
+\subsection{Modélisation UML demandée}
+\begin{itemize}
+  \item Diagramme de cas d'utilisation.
+  \item Diagramme de classes.
+  \item Diagramme de séquence pour l'attribution d'une chambre.
+  \item Diagramme d'états-transitions d'une demande d'hébergement.
+\end{itemize}
+
+\subsection{Classes envisageables}
+\texttt{Etudiant}, \texttt{Residence}, \texttt{Batiment}, \texttt{Chambre}, \texttt{DemandeHebergement}, \texttt{Attribution}.
+
+\subsection{Extension}
+Calcul du taux d'occupation de la résidence et affichage de statistiques.
+
+\newpage
+\section{Exercice 3 -- Gestion d'un personnel universitaire}
+
+\subsection{Contexte}
+Une université possède plusieurs catégories de personnel : enseignants, agents administratifs et techniciens. Tous les employés possèdent un matricule, un nom, un prénom et un salaire de base. Cependant, les enseignants perçoivent des indemnités spécifiques, tandis que les agents administratifs et les techniciens bénéficient d'autres primes.
+
+\subsection{Travail demandé}
+\begin{enumerate}
+  \item Identifier la classe mère et les classes dérivées.
+  \item Réaliser un diagramme de classes UML.
+  \item Représenter les relations d'héritage.
+  \item Implémenter les classes en C++.
+  \item Utiliser les méthodes virtuelles pour calculer le salaire.
+  \item Afficher les informations de chaque employé.
+  \item Créer une collection contenant plusieurs catégories d'employés.
+\end{enumerate}
+
+\subsection{Notions à mobiliser}
+\begin{itemize}
+  \item Héritage.
+  \item Polymorphisme.
+  \item Classes abstraites.
+  \item Méthodes virtuelles.
+  \item Redéfinition des méthodes.
+  \item Liaison dynamique.
+\end{itemize}
+
+\newpage
+% =====================================================
+\part*{Résolutions}
+\addcontentsline{toc}{part}{Résolutions}
+% =====================================================
+
+\section{Résolution du TP 3 -- Résidence universitaire}
+
+\subsection{Diagramme de cas d'utilisation}
+ Exporter le diagramme PlantUML en PDF puis décommenter :
+% \begin{figure}[H]
+ % \centering
+% \includegraphics[width=\textwidth]{cas_utilisation}
+ % \caption{Diagramme de cas d'utilisation}
+% \end{figure}
+
+\subsection{Diagramme de classes}
+% \begin{figure}[H]
+%   \centering
+% \includegraphics[width=\textwidth]{Diagramme_de_Classe_UML}
+%   \caption{Diagramme de classes}
+% \end{figure}
+
+\subsection{Diagramme de séquence : attribution d'une chambre}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=\textwidth]{sequence_attribution.pdf}
+%   \caption{Diagramme de séquence}
+% \end{figure}
+
+\subsection{Diagramme d'états-transitions d'une demande d'hébergement}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{etats_demande.pdf}
+%   \caption{Diagramme d'états-transitions}
+% \end{figure}
+
+\subsection{Extension : taux d'occupation}
+
+\newpage
+\section{Résolution de l'Exercice 3 -- Personnel universitaire}
+
+\subsection{Classe mère et classes dérivées}
+
+\subsection{Diagramme de classes UML}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=\textwidth]{classes_personnel.pdf}
+%   \caption{Diagramme de classes : hiérarchie du personnel}
+% \end{figure}
+
+\subsection{Implémentation en C++}
+% \begin{lstlisting}
+% // Code C++ ici
+% \end{lstlisting}
+
+\subsection{Programme principal et résultat de l'exécution}
+
+\end{document}
